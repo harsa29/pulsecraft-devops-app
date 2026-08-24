@@ -89,7 +89,7 @@ export default function DevOpsGuideDrawer({ isOpen, onClose }) {
           </h3>
           <ol style={{ paddingLeft: '20px', color: 'var(--text-muted)', fontSize: '0.85rem', display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <li>Point your domain's <strong>A Record</strong> to your Linux VPS Public IP address.</li>
-            <li>Run the automated deployment script on your server: <code style={{ color: 'var(--primary-cyan)' }}>bash devops/scripts/deploy.sh your-domain.com</code></li>
+            <li>Run the automated deployment script on your server: <code style={{ color: 'var(--primary-cyan)' }}>bash devops/scripts/deploy.sh harsavardhandevops.online</code></li>
             <li>Configure GitHub Repository Secrets (`SERVER_HOST`, `SERVER_USER`, `SSH_PRIVATE_KEY`, `DOCKER_USERNAME`, `DOCKER_PASSWORD`).</li>
             <li>Push changes to <code style={{ color: 'var(--accent-purple)' }}>main</code> branch — GitHub Actions will test, build, and deploy automatically!</li>
           </ol>

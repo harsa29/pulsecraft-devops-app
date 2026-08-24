@@ -35,7 +35,7 @@ Before beginning, ensure you have:
 
 3. Verify DNS propagation using terminal or [dnschecker.org](https://dnschecker.org):
    ```bash
-   ping your-domain.com
+   ping harsavardhandevops.online
    ```
    *(Ensure it resolves to your VPS IP before proceeding).*
 
@@ -73,7 +73,7 @@ Before beginning, ensure you have:
 
 2. Run the automated deployment bash script:
    ```bash
-   sudo bash devops/scripts/deploy.sh your-domain.com
+   sudo bash devops/scripts/deploy.sh harsavardhandevops.online
    ```
    This script automatically:
    - Installs Docker and Docker Compose plugin.
@@ -86,7 +86,7 @@ Before beginning, ensure you have:
 
 1. Obtain a free SSL certificate from Let's Encrypt using Certbot:
    ```bash
-   sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+   sudo certbot --nginx -d harsavardhandevops.online -d www.harsavardhandevops.online
    ```
 2. Select option `2` to automatically redirect all HTTP traffic to secure HTTPS.
 3. Test automated SSL certificate renewal:
@@ -136,7 +136,7 @@ To enable **100% automated push-to-deploy** whenever you push code to GitHub:
   ```
 - **Check Backend Health API**:
   ```bash
-  curl https://your-domain.com/api/v1/metrics/live
+  curl https://harsavardhandevops.online/api/v1/metrics/live
   ```
 
 ---
@@ -149,7 +149,7 @@ For container-orchestrated production clusters (AWS EKS, DigitalOcean Kubernetes
 
 2. **One-Command Deployment via Kustomize**:
    ```bash
-   bash k8s/deploy-k8s.sh your-domain.com
+   bash k8s/deploy-k8s.sh harsavardhandevops.online
    ```
    *Alternatively, apply manually:*
    ```bash

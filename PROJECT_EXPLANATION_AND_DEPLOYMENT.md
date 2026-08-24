@@ -1,6 +1,6 @@
-# 🚀 PulseCraft: Complete Folder-by-Folder Guide & Production Deployment for `harsavardhandevops.cloud`
+# 🚀 PulseCraft: Complete Folder-by-Folder Guide & Production Deployment for `harsavardhandevops.online`
 
-Welcome to **PulseCraft** — a unique, real-time Cloud Infrastructure & Application Telemetry Control Center. This comprehensive documentation explains **what the application does**, breaks down **every folder and file in the codebase**, and provides a **step-by-step guide to deploy it on your domain `harsavardhandevops.cloud`**.
+Welcome to **PulseCraft** — a unique, real-time Cloud Infrastructure & Application Telemetry Control Center. This comprehensive documentation explains **what the application does**, breaks down **every folder and file in the codebase**, and provides a **step-by-step guide to deploy it on your domain `harsavardhandevops.online`**.
 
 ---
 
@@ -13,7 +13,7 @@ Welcome to **PulseCraft** — a unique, real-time Cloud Infrastructure & Applica
    - [`devops/` (Server & Nginx Configs)](#24-devops-server--nginx-configs)
    - [`k8s/` (Kubernetes Manifests)](#25-k8s-kubernetes-manifests)
    - [`.github/workflows/` (CI/CD Pipeline)](#26-githubworkflows-cicd-pipeline)
-3. [Step-by-Step Deployment Guide for `harsavardhandevops.cloud`](#3-step-by-step-deployment-guide-for-harsavardhandevopscloud)
+3. [Step-by-Step Deployment Guide for `harsavardhandevops.online`](#3-step-by-step-deployment-guide-for-harsavardhandevopscloud)
    - [Option A: Docker Compose & Nginx VPS Deployment](#option-a-docker-compose--nginx-vps-deployment-recommended)
    - [Option B: Kubernetes (K8s / K3s) Cluster Deployment](#option-b-kubernetes-k8s--k3s-cluster-deployment)
 4. [Setting Up Automated GitHub Actions CI/CD](#4-setting-up-automated-github-actions-cicd)
@@ -165,16 +165,16 @@ k8s/
 
 ---
 
-## 3. Step-by-Step Deployment Guide for `harsavardhandevops.cloud`
+## 3. Step-by-Step Deployment Guide for `harsavardhandevops.online`
 
-This section details how to deploy PulseCraft on your domain **`harsavardhandevops.cloud`**.
+This section details how to deploy PulseCraft on your domain **`harsavardhandevops.online`**.
 
 ---
 
 ### Option A: Docker Compose & Nginx VPS Deployment (Recommended)
 
 #### Step 1: Configure DNS A Records
-Log into your domain provider console (Cloudflare / Namecheap / GoDaddy) for `harsavardhandevops.cloud`:
+Log into your domain provider console (Cloudflare / Namecheap / GoDaddy) for `harsavardhandevops.online`:
 
 | Type | Host | Points To / Value | TTL |
 | :--- | :--- | :--- | :--- |
@@ -183,7 +183,7 @@ Log into your domain provider console (Cloudflare / Namecheap / GoDaddy) for `ha
 
 *Test DNS resolution on your local terminal:*
 ```bash
-ping harsavardhandevops.cloud
+ping harsavardhandevops.online
 ```
 
 ---
@@ -207,14 +207,14 @@ cd /opt/pulsecraft
 #### Step 3: Run the Automated Deployment Script
 Execute the deployment script with your domain name:
 ```bash
-sudo bash devops/scripts/deploy.sh harsavardhandevops.cloud
+sudo bash devops/scripts/deploy.sh harsavardhandevops.online
 ```
 
 This script will automatically:
 1. Update system packages and install Docker + Docker Compose.
 2. Configure UFW Firewall (Allow SSH 22, HTTP 80, HTTPS 443).
 3. Build and launch the Java backend and React frontend containers.
-4. Request and configure a free **Let's Encrypt SSL Certificate** for `harsavardhandevops.cloud` and `www.harsavardhandevops.cloud`.
+4. Request and configure a free **Let's Encrypt SSL Certificate** for `harsavardhandevops.online` and `www.harsavardhandevops.online`.
 
 ---
 
@@ -225,11 +225,11 @@ If you are running a Kubernetes cluster (K3s, MicroK8s, Minikube, EKS, GKE, DOKS
 1. Connect `kubectl` to your cluster.
 2. Run the automated Kubernetes deployment script:
    ```bash
-   bash k8s/deploy-k8s.sh harsavardhandevops.cloud
+   bash k8s/deploy-k8s.sh harsavardhandevops.online
    ```
 3. Or deploy manually via Kustomize:
    ```bash
-   sed -i 's/your-domain.com/harsavardhandevops.cloud/g' k8s/ingress.yaml
+   sed -i 's/your-domain.com/harsavardhandevops.online/g' k8s/ingress.yaml
    kubectl apply -k k8s/
    ```
 4. Verify running pods and ingress status:
@@ -255,7 +255,7 @@ To enable automatic push-to-deploy whenever you push code to GitHub:
 | `DOCKER_USERNAME` | Your Docker Hub username |
 | `DOCKER_PASSWORD` | Your Docker Hub password / access token |
 
-Now, whenever you run `git push origin main`, GitHub Actions will test, build, push Docker containers, and update `harsavardhandevops.cloud` automatically!
+Now, whenever you run `git push origin main`, GitHub Actions will test, build, push Docker containers, and update `harsavardhandevops.online` automatically!
 
 ---
 
@@ -269,9 +269,9 @@ Now, whenever you run `git push origin main`, GitHub Actions will test, build, p
 | **View Backend Container Logs** | `docker logs -f pulsecraft-backend` |
 | **View Frontend Container Logs** | `docker logs -f pulsecraft-frontend` |
 | **View Kubernetes Pod Logs** | `kubectl logs -f deployment/pulsecraft-backend -n pulsecraft` |
-| **Test Live Telemetry API** | `curl https://harsavardhandevops.cloud/api/v1/metrics/live` |
+| **Test Live Telemetry API** | `curl https://harsavardhandevops.online/api/v1/metrics/live` |
 | **Renew SSL Certificate** | `sudo certbot renew --dry-run` |
 
 ---
 
-🎉 **Congratulations!** Your **PulseCraft** Java + React application is ready for production on **`harsavardhandevops.cloud`**!
+🎉 **Congratulations!** Your **PulseCraft** Java + React application is ready for production on **`harsavardhandevops.online`**!
