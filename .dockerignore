@@ -1,0 +1,24 @@
+# Git & Version Control
+.git
+.gitignore
+.github
+
+# Node dependencies & build artifacts
+node_modules
+frontend/node_modules
+frontend/dist
+frontend/build
+
+# Java Maven build output
+target
+backend/target
+*.jar
+
+# IDEs & System files
+.idea
+.vscode
+.DS_Store
+*.log
+README.md
+DEPLOYMENT_GUIDE.md
+PROJECT_EXPLANATION_AND_DEPLOYMENT.md
