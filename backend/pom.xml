@@ -14,7 +14,7 @@
     <artifactId>pulsecraft-backend</artifactId>
     <version>1.0.0</version>
     <name>pulsecraft-backend</name>
-    <description>PulseCraft - Real-time Infrastructure & Application Telemetry Service</description>
+    <description>PulseCraft - Real-time Infrastructure and Application Telemetry Service</description>
 
     <properties>
         <java.version>21</java.version>
