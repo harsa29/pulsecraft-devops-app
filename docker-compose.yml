@@ -30,7 +30,7 @@ services:
     container_name: pulsecraft-frontend
     restart: always
     ports:
-      - "80:80"
+      - "3000:80"
     depends_on:
       backend:
         condition: service_healthy
